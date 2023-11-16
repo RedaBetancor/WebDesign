@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #141615;
+}
+
+body, html {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+header {
+  background-color: #000;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#logo {
+  padding: 5px;
+  margin-top: 8px;
+  width: 80px;
+  height: 80px;
+}
+
+.nav-label,
+.nav-input {
+  display: none;
+  margin-top: 9px;
+}
+
+.nav-label {
+  display: block;
+  cursor: pointer;
+}
+
+.nav-input:checked+#head {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.hidden {
+  display: none;
+}
+
+#head {
+	position: fixed;
+	background: #141615;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 42%;
+	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	transition: clip-path 1s;
+	z-index: 2;
+}
+
+#head a {
+  font-size: 1rem;
+  margin-top: 85px;
+  color: #ca9945;
+  text-decoration: none;
+  padding: 10px 20px 10px 20px;
+}
+
+#head a:hover {
+	background-color: #2f3231;
+}
+
+.home-1 {
+  height: 90vh;
+  width: 100%; 
+  background-color: #ca9945;
+}
+
+/* .img-scroll {
+  display: flex;
+  height: 40vh;
+  /* Agrega barras de desplazamiento permitiendo ver el contenido oculto */
+  /* overflow-x: scroll; */
+  /* Evita que al llegar el contenido final este vuelva al contenido principal */
+  /* overscroll-behavior-x: contain; */
+  /* Ayuda a detener el scroll con un "acoplamiento" o "snapping" */
+  /* scroll-snap-type: x proximity;
+	border: 1px solid rgba(255, 255, 255, 0.375);
+  
+}  */
+
+/* .img-scroll img {
+  position: relative;
+  width: 100%;
+  scroll-snap-align: center;
+} */
+
+#cardio {
+  position: absolute;
+  display: flex;
+  height: 50vh;
+  width: 100%;
+}
+
+.home-1 article {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  color: white;
+  padding: 10px;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-1 article h1 {
+  font-size: 2em;
+}
+
+.home-1 article h2 {
+  font-size: 1em;
+}
+
+.home-1 article h1,h2 {
+  display: flex;
+  align-items: center;
+}
+
+.home-1 button {
+  margin-left: 10px;
+}
+
+#card-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  scroll-snap-align: center;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-trainer, .card-trainer-2, .card-trainer-3 {
+  display: flex;
+  margin: 50px 100px 0;
+  flex-direction: column;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  align-items: center;
+  height: 50%;
+  width: 50%;
+  border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.375);
+}
+
+.card-trainer img, .card-trainer-2 img, .card-trainer-3 img {
+  width: 100%;
+  height: 45%;
+  border-radius: 10px;
+}
+
+.card-trainer article {
+  color: white;
+  gap: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-trainer article h4 {
+  margin-top: 9px;
+  font-size: 15px;
+}
+
+.card-trainer article p {
+  margin-top: 6px;
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+.card-trainer article button {
+  margin-top: 40px;
+  cursor: pointer;
+  color: #141615;
+  font-size: 12px;
+  width: 97px;
+  border: 0;
+  padding: 10px 0;
+  border-radius: 5px;
+  background-color: #ca9945;
+}
+
+/* .home {
+  overflow-y: hidden;
+	color: #e2e5e3;
+}
+
+.img-box {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.img-box img {
+  border: 1px solid rgba(255, 255, 255, 0.375);
+	width: 100%;
+  height: 60vh;
+  margin-bottom: 40vh;
+} */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
