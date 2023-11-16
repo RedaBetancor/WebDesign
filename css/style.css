@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #141615;
+  background-color: black;
 }
 
 body, html {
@@ -78,9 +78,7 @@ header {
 .home-1 {
   height: 90vh;
   width: 100%; 
-  background-color: #ca9945;
   display: block;
-
 }
 
 /* .img-scroll {
@@ -135,22 +133,71 @@ header {
 }
 
 .card-container {
+  height: 260px;
   position: relative;
-  border: #000 solid ;
   display: flex;
   scroll-snap-align: center;
 }
 
 .card-slider {
   display: flex;
-  height: 316px;
   overflow-x: scroll;
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
 }
 
-#card-1 img {
+#card-1 {
   height: 100%;
+  border-radius: 7px;
+  background-color: #141615;
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+}
+
+#card-2 {
+  height: 100%;
+  border-radius: 7px;
+  background-color: #141615;
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+}
+
+#card-1 img, #card-2 img {
+  height: 30%;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#card-1-letter, #card-2-letter {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+  color: white;
+}
+
+#card-1-letter h4, #card-2-letter h4 {
+  margin-top: 7px;
+}
+
+#card-1-letter button, #card-2-letter button {
+  margin-bottom: 8px;
+  width: 97px;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 5px;
+
+}
+
+#card-1-letter, #card-2-letter p {
+  margin: 0 3px 0 7px;
 }
 
 /* .home-1 button {

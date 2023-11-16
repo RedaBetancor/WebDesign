@@ -1,0 +1,14 @@
+
+
+.img-box{
+    display: flex;
+    width: 10px;
+    height: 10px;
+    background: blue;
+}
+.img-box>img{
+    width: 45vw;
+    height: 45vh;
+    background: blue;
+}
+
