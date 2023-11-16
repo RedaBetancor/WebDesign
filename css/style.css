@@ -79,6 +79,8 @@ header {
   height: 90vh;
   width: 100%; 
   background-color: #ca9945;
+  display: block;
+
 }
 
 /* .img-scroll {
@@ -100,14 +102,13 @@ header {
   scroll-snap-align: center;
 } */
 
-#cardio {
-  position: absolute;
-  display: flex;
+.home-img img {
+  position: relative;
   height: 50vh;
   width: 100%;
 }
 
-.home-1 article {
+#home-letter {
   position: absolute;
   width: 100%;
   z-index: 1;
@@ -120,45 +121,67 @@ header {
   align-items: center;
 }
 
-.home-1 article h1 {
+#home-letter h1 {
   font-size: 2em;
 }
 
-.home-1 article h2 {
+#home-letter h2 {
   font-size: 1em;
 }
 
-.home-1 article h1,h2 {
+#home-letter h1,h2 {
   display: flex;
   align-items: center;
 }
 
-.home-1 button {
-  margin-left: 10px;
+.card-container {
+  position: relative;
+  border: #000 solid ;
+  display: flex;
+  scroll-snap-align: center;
 }
 
-#card-container {
+.card-slider {
   display: flex;
-  flex-direction: row;
+  height: 316px;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+}
+
+#card-1 img {
+  height: 100%;
+}
+
+/* .home-1 button {
+  margin-left: 10px;
+} */
+
+/* #card-container {
   position: relative;
   scroll-snap-align: center;
-  height: 100vh;
-  width: 100vw;
+  display: flex;
   flex-direction: row;
+  height: 100vh;
   justify-content: center;
   align-items: center;
 }
 
-.card-trainer, .card-trainer-2, .card-trainer-3 {
+.card-slider {
+  gap: 50px;
+  width: 100%;
+  height: auto;
   display: flex;
-  margin: 50px 100px 0;
-  flex-direction: column;
   overflow-x: scroll;
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
+}
+
+.card-trainer, .card-trainer-2, .card-trainer-3 {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  height: 50%;
-  width: 50%;
+  width: 25%;
   border-radius: 10px;
 	border: 1px solid rgba(255, 255, 255, 0.375);
 }
@@ -169,7 +192,7 @@ header {
   border-radius: 10px;
 }
 
-.card-trainer article {
+.card-trainer article, .card-trainer-2 article, .card-trainer-3 article {
   color: white;
   gap: 3px;
   display: flex;
@@ -177,18 +200,18 @@ header {
   align-items: center;
 }
 
-.card-trainer article h4 {
+.card-trainer article h4, .card-trainer-2 article h4, .card-trainer-3 article h4 {
   margin-top: 9px;
   font-size: 15px;
 }
 
-.card-trainer article p {
+.card-trainer article p, .card-trainer-2 article p, .card-trainer-3 article p {
   margin-top: 6px;
   font-size: 15px;
   padding-left: 20px;
 }
 
-.card-trainer article button {
+.card-trainer article button, .card-trainer-2 article button, .card-trainer-3 article button {
   margin-top: 40px;
   cursor: pointer;
   color: #141615;
@@ -198,7 +221,7 @@ header {
   padding: 10px 0;
   border-radius: 5px;
   background-color: #ca9945;
-}
+} */
 
 /* .home {
   overflow-y: hidden;
