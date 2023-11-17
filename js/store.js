@@ -41,16 +41,16 @@ function agregarProductoALista(producto) {
     productListContainer.appendChild(productCard);
 }
 
-document.getElementById("menu").addEventListener("click", ()=>{
+document.getElementById("burguer").addEventListener("click", ()=>{
     var cross = document.getElementById("cross");
     cross.classList.remove("hidden");
-    var menu = document.getElementById("menu");
-    menu.classList.add("hidden");
+    var burguer = document.getElementById("burguer");
+    burguer.classList.add("hidden");
 })
 
 document.getElementById("cross").addEventListener("click", () => {
   var cross = document.getElementById("cross");
   cross.classList.add("hidden");
-  var menu = document.getElementById("menu");
-  menu.classList.remove("hidden");
+  var burguer = document.getElementById("burguer");
+  burguer.classList.remove("hidden");
 })
