@@ -1,84 +1,114 @@
-document.getElementById("button").addEventListener("click", function (e) {
-  e.preventDefault();
+const form = document.getElementById("product-form");
+const button = document.getElementById("button");
+const productList = document.getElementById("product-list");
+const products = [];
 
-  if (validateForm()) {
-    const PRODUCTNAME = document.getElementById("product-name").value;
-    const QUANTITY = document.getElementById("quantity").value;
-    const FLAVOR = document.getElementById("flavor").value;
-    const BRAND = document.getElementById("brand").value;
+button.addEventListener("click", function (event) {
+  event.preventDefault();
 
-    const PRODUCTDATA = {
-      name: PRODUCTNAME,
-      flavor: FLAVOR,
-      brand: BRAND,
-      quantity: QUANTITY,
-    };
+  const productName = document.getElementById("product-name").value;
+  const brand = document.getElementById("brand").value;
+  const flavor = document.getElementById("flavor").value;
+  const quantity = document.getElementById("quantity").value;
 
-    agregarProductoALista(PRODUCTDATA);
-    document.getElementById("productForm").reset();
+  if (!productName || !brand || !flavor || !quantity) {
+    displayErrorMessage("Por favor, complete todos los campos.");
+    return;
   }
+
+  const product = {
+    productName,
+    brand,
+    flavor,
+    quantity,
+  };
+
+  products.push(product);
+
+  form.reset();
+
+  displayProductList();
+
+  clearErrorMessages();
 });
 
-function validateForm() {
-  clearErrorMessages();
+function displayProductList() {
+  productList.innerHTML = "";
 
-  const PRODUCTNAME = document.getElementById("product-name").value;
-  const QUANTITY = document.getElementById("quantity").value;
-  const FLAVOR = document.getElementById("flavor").value;
-  const BRAND = document.getElementById("brand").value;
+  products.forEach(function (product, index) {
+    const productCard = document.createElement("div");
+    productCard.className = "card mb-2";
 
-  let isValid = true;
+    const cardBody = document.createElement("div");
+    cardBody.className = "card-body";
 
-  if (PRODUCTNAME.trim() === "") {
-    displayErrorMessage("product-name", "Por favor, rellene el campo.")
-    isValid = false;
-  }
+    const title = document.createElement("h5");
+    title.className = "card-title";
+    title.textContent = product.productName + " - " + product.brand;
 
-  if (QUANTITY.trim() === "") {
-    displayErrorMessage("quantity", "Por favor, rellene el campo.")
-    isValid = false;
-  }
+    const details = document.createElement("p");
+    details.className = "card-text";
+    details.textContent =
+      "Sabor: " + product.flavor + ", Cantidad: " + product.quantity;
 
-  if (FLAVOR.trim() === "") {
-    displayErrorMessage("flavor", "Por favor, rellene el campo.")
-    isValid = false;
-  }
+    const editButton = document.createElement("button");
+    editButton.className = "btn btn-warning btn-sm me-2";
+    editButton.textContent = "Editar";
+    editButton.addEventListener("click", function () {
+      editProduct(index);
+    });
 
-  if (BRAND.trim() === "") {
-    displayErrorMessage("brand", "Por favor, rellene el campo.")
-    isValid = false;
-  }
+    const deleteButton = document.createElement("button");
+    deleteButton.className = "btn btn-danger btn-sm";
+    deleteButton.textContent = "Eliminar";
+    deleteButton.addEventListener("click", function () {
+      products.splice(index, 1);
+      displayProductList();
+    });
 
-  return isValid;
-}
+    cardBody.appendChild(title);
+    cardBody.appendChild(details);
+    cardBody.appendChild(editButton);
+    cardBody.appendChild(deleteButton);
 
-function displayErrorMessage(fieldId, message) {
-  const ERRORMESSAGEELEMENT = document.getElementById(fieldId + "-error");
-  ERRORMESSAGEELEMENT.textContent = message;
-}
+    productCard.appendChild(cardBody);
 
-function clearErrorMessages() {
-  const ERRORMESSAGES = document.querySelectorAll(".error-message");
-  ERRORMESSAGES.forEach(function (ERRORMESSAGES) {
-    ERRORMESSAGES.textContent = "";
+    productList.appendChild(productCard);
   });
 }
 
-function agregarProductoALista(producto) {
-  const PRODUCTLISTCONTAINER = document.getElementById("productList");
+function displayErrorMessage(message) {
+  clearErrorMessages();
 
-  const PRODUCTCARD = document.createElement("div");
-  PRODUCTCARD.className = "card m-2";
-  PRODUCTCARD.style = "width: 18rem;";
+  const errorMessage = document.createElement("div");
+  errorMessage.className = "alert alert-danger";
+  errorMessage.textContent = message;
 
-  PRODUCTCARD.innerHTML = `
-      <div class="card-body">
-        <h5 class="card-title">${producto.name}</h5>
-        <p class="card-text">Marca: ${producto.brand}</p>
-        <p class="card-text">Sabor: ${producto.taste}</p>
-        <p class="card-text">Cantidad: ${producto.quantity}</p>
-      </div>
-    `;
+  form.insertBefore(errorMessage, form.firstChild);
+}
 
-  PRODUCTLISTCONTAINER.appendChild(PRODUCTCARD);
+function clearErrorMessages() {
+  const errorMessage = form.querySelectorAll(".invalid-feedback");
+  errorMessage.forEach(function (errorMessage) {
+    errorMessage.textContent = "";
+  });
+}
+
+function editProduct(index) {
+  const product = products[index];
+
+  document.getElementById("product-name").value = product.productName;
+  document.getElementById("brand").value = product.brand;
+  document.getElementById("flavor").value = product.flavor;
+  document.getElementById("quantity").value = product.quantity;
+
+  products.splice(index, 1);
+
+  displayProductList();
+}
+
+function deleteProduct(index) {
+  products.splice(index, 1);
+
+  displayProductList();
 }

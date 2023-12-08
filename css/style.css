@@ -10,7 +10,7 @@ body {
 
 body,
 html {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 header {
@@ -135,12 +135,12 @@ h2 {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  height: 90%;
+  height: 100%;
   gap: 20px;
 }
 
 #card-1 {
-  height: 100%;
+  height: 30%;
   border-radius: 7px;
   background-color: #3e1f0a;
   width: 50%;
@@ -149,7 +149,7 @@ h2 {
 }
 
 #card-2 {
-  height: 100%;
+  height: 30%;
   border-radius: 7px;
   background-color: #3e1f0a;
   width: 50%;
@@ -265,7 +265,6 @@ h2 {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-
   .nav-label {
     display: none;
   }
@@ -312,7 +311,7 @@ h2 {
     width: 40%;
   }
 
-  #card-2{
+  #card-2 {
     width: 40%;
   }
 
@@ -330,12 +329,10 @@ h2 {
   .footer {
     justify-content: center;
   }
-
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
   #head-2 {
     gap: 22px;
     margin-right: 28px;
@@ -345,7 +342,7 @@ h2 {
     width: 80%;
   }
 
-  .card-container {    
+  .card-container {
     width: 97vw;
     display: flex;
     justify-content: center;
@@ -364,7 +361,6 @@ h2 {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
- 
   #cardio {
     height: 100vh;
   }
@@ -430,7 +426,6 @@ h2 {
   .right-side {
     padding: 0 25px;
   }
-
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
