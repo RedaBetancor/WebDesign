@@ -191,16 +191,6 @@ h2 {
   margin-top: 7px;
 }
 
-#card-1-letter button,
-#card-2-letter button,
-#card-3-letter button {
-  margin-bottom: 8px;
-  width: 97px;
-  cursor: pointer;
-  font-size: 13px;
-  border-radius: 5px;
-}
-
 #card-1-letter,
 #card-2-letter p,
 #card-3-letter p {
@@ -271,6 +261,15 @@ h2 {
 
 .social-media a {
   text-decoration: none;
+}
+
+.link {
+  background-color: #fff;
+  padding: 7px;
+  border-radius: 7px;
+  text-decoration: none;
+  color: #000;
+  margin-bottom: 7px;
 }
 
 /* Extra small devices (phones, 600px and down) */
